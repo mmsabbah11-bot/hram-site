@@ -191,10 +191,10 @@ nav{display:none;position:absolute;top:100%;inset-inline:0;background:rgba(11,23
 <footer><div class="c"><div class="ft"><div><a class="logo"><span class="m">HR</span><span>הרם הנדסה ותחבורה בע״מ<small>ENGINEERING · TRANSPORTATION</small></span></a><p>תכנון, פיקוח וניהול פרויקטים הנדסיים בסטנדרטים הגבוהים ביותר.</p></div>
 <div><h4>ניווט</h4><ul><li><a href="#services">שירותים</a></li><li><a href="#areas">תחומי פעילות</a></li><li><a href="#why">למה הרם</a></li><li><a href="#contact">צור קשר</a></li></ul></div>
 <div><h4>פרטי התקשרות</h4><ul><li>אבן סינא 105, טורעאן</li><li><a href="tel:0543489357">054-348-9357</a></li><li><a href="mailto:office@hram.co.il">office@hram.co.il</a></li></ul></div></div>
-<div class="cp"><span>© <span id="y"></span> הרם הנדסה ותחבורה בע״מ · ח.פ. 516561032</span><span>כל הזכויות שמורות</span></div></div></footer>
+<div class="cp"><span>© 2026 הרם הנדסה ותחבורה בע״מ, מוחמד סבאח · ח.פ. 516561032</span><span>כל הזכויות שמורות</span></div></div></footer>
 <a class="fab" href="tel:0543489357"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>התקשרו למשרד</a>
 <script>
-y.textContent=new Date().getFullYear();const h=document.getElementById('hd');
+const h=document.getElementById('hd');
 const secs=[...document.querySelectorAll('[data-cam]')];hud.innerHTML=secs.map((s,i)=>`<a href="#" data-i="${i}"><i></i>${s.dataset.label}</a>`).join('');
 hud.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();secs[a.dataset.i].scrollIntoView({behavior:'smooth'})});
 function onS(){h.classList.toggle('s',scrollY>40);const m=scrollY+innerHeight/2;let k=0;secs.forEach((s,i)=>{if(s.offsetTop<=m)k=i});hud.querySelectorAll('a').forEach((a,i)=>a.classList.toggle('on',i===k))}
