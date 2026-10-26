@@ -1,0 +1,19 @@
+/* © הרם הנדסה ותחבורה בע״מ, מוחמד סבאח. כל הזכויות שמורות. */
+.hgrid{display:grid;grid-template-columns:260px 1fr;gap:26px;align-items:start}
+.hside{padding:20px;position:sticky;top:90px}.hside h4{margin-bottom:10px;color:var(--a)}
+.hside ul{list-style:none}.hside li a{display:block;padding:8px 10px;border-radius:6px;font-size:15px}
+.hside li a:hover,.hside li a.on{background:rgba(255,255,255,.08);color:var(--a)}
+.hmain{min-width:0}.hcard{margin-bottom:22px}.hcard h2{font-size:22px;margin-bottom:14px}
+.steps{padding-inline-start:22px;line-height:1.9}.steps li{margin-bottom:6px}
+code{direction:ltr;unicode-bidi:isolate;font-family:Consolas,monospace;background:rgba(255,255,255,.08);padding:1px 6px;border-radius:4px;font-size:.92em;word-break:break-all}
+.tw{overflow-x:auto}.ht{width:100%;border-collapse:collapse;font-size:15px}.ht th,.ht td{border-bottom:1px solid var(--gb);padding:9px;text-align:right;vertical-align:top}.ht th{color:var(--a)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:22px}
+.tile{padding:20px;display:block;transition:.2s}.tile:hover{transform:translateY(-3px);border-color:var(--a)}
+.fsearch input{width:100%;padding:13px 16px;font:inherit;font-size:16px;background:rgba(255,255,255,.06);border:1px solid var(--gb);color:#fff;border-radius:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.chip{font:inherit;font-size:14px;padding:6px 14px;border-radius:20px;border:1px solid var(--gb);background:transparent;color:#fff;cursor:pointer}.chip.on{background:var(--a);color:var(--n);border-color:var(--a)}
+.qa{border-bottom:1px solid var(--gb)}.qa summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.qa summary::-webkit-details-marker{display:none}.qa summary:after{content:"+";color:var(--a);font-size:22px;line-height:1}.qa[open] summary:after{content:"−"}
+.ans{padding:0 0 16px;line-height:1.85;color:var(--mut)}.ans a,.hcard p a,.feat a,.steps a{color:var(--a)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}.cgrid small{display:block;color:var(--mut)}.cgrid a,.cgrid span{font-size:19px;font-weight:600}
+mark{background:var(--a);color:var(--n)}
+@media(max-width:860px){.hgrid{grid-template-columns:1fr}.hside{position:static}}
