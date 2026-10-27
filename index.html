@@ -111,11 +111,35 @@ nav{display:none;position:absolute;top:100%;inset-inline:0;background:rgba(11,23
 .trust .c{height:auto;padding-top:14px;padding-bottom:14px;flex-direction:column;align-items:flex-start;gap:6px}.trust ul{gap:6px 18px;font-size:14px}.scrollhint,.coord{display:none}
 .fab{display:flex;position:fixed;bottom:18px;left:18px;z-index:70;background:var(--a);color:var(--n);font-weight:700;padding:14px 20px;gap:8px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);border-radius:40px;font-size:15px}.fab svg{width:18px;height:18px;stroke:var(--n);fill:none;stroke-width:2}}
 @media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none}}
-</style></head><body>
+/* HRAM home: products showcase (proposed) */
+.prods .panel{max-width:var(--w);width:100%}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
+.pcd{display:flex;flex-direction:column;border:1px solid var(--gb);background:rgba(255,255,255,.03);transition:.3s;overflow:hidden}
+.pcd:hover{border-color:var(--a);background:rgba(240,168,28,.06)}
+.pcd img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.pcd .pb2{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pcd h3{font-size:18px;line-height:1.3}.pcd p{font-size:14px;color:var(--mut);flex:1}
+.pcd .pr{color:var(--a);font-weight:700;font-size:20px}.pcd .pr small{display:block;font-weight:400;font-size:12px;color:var(--mut)}
+.pcd .more{font-weight:600;font-size:14px;color:var(--a)}
+.pall{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+@media(max-width:1080px){.pgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+</style><link rel="canonical" href="https://hram.co.il/">
+<meta property="og:locale" content="he_IL"><meta property="og:site_name" content="הרם הנדסה ותחבורה"><meta property="og:type" content="website">
+<meta property="og:title" content="הרם הנדסה ותחבורה בע״מ | תכנון, פיקוח וניהול פרויקטים הנדסיים">
+<meta property="og:description" content="הרם הנדסה ותחבורה – תכנון תנועה וכבישים, קונסטרוקציה, פיקוח הנדסי וניהול פרויקטים תחת קורת גג אחת.">
+<meta property="og:url" content="https://hram.co.il/">
+<meta property="og:image" content="https://hram.co.il/img/hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="הרם הנדסה ותחבורה בע״מ | תכנון, פיקוח וניהול פרויקטים הנדסיים">
+<meta name="twitter:description" content="הרם הנדסה ותחבורה – תכנון תנועה וכבישים, קונסטרוקציה, פיקוח הנדסי וניהול פרויקטים תחת קורת גג אחת.">
+<meta name="twitter:image" content="https://hram.co.il/img/hero.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hram.co.il/#org","name":"הרם הנדסה ותחבורה בע״מ","alternateName":"HRAM Engineering & Transportation","url":"https://hram.co.il/","logo":"https://hram.co.il/favicon.svg","telephone":"+972-54-348-9357","email":"office@hram.co.il","address":{"@type":"PostalAddress","streetAddress":"אבן סינא 105","addressLocality":"טורעאן","addressCountry":"IL"}},{"@type":"WebSite","@id":"https://hram.co.il/#site","url":"https://hram.co.il/","name":"הרם הנדסה ותחבורה","inLanguage":"he","publisher":{"@id":"https://hram.co.il/#org"}}]}</script>
+</head><body>
 <div class="loader"><span>LOADING · HRAM ENGINEERING</span></div>
 <canvas id="gl" aria-hidden="true"></canvas><div id="fb"></div><div class="vign"></div>
 <header id="hd"><div class="c nav"><a href="#" class="logo"><span class="m">HR</span><span>הרם הנדסה ותחבורה<small>ENGINEERING · TRANSPORTATION</small></span></a>
-<nav id="nv"><ul><li><a href="#services">שירותים</a></li><li><a href="#areas">תחומי פעילות</a></li><li><a href="#why">למה הרם</a></li><li><a href="#process">תהליך העבודה</a></li><li><a href="#video">סרטון תדמית</a></li><li><a href="/products/">מוצרים</a></li><li><a href="/help/">עזרה</a></li><li><a href="#contact">צור קשר</a></li></ul></nav>
+<nav id="nv"><ul><li><a href="#services">שירותים</a></li><li><a href="#areas">תחומי פעילות</a></li><li><a href="#why">למה הרם</a></li><li><a href="#process">תהליך העבודה</a></li><li><a href="#video">סרטון תדמית</a></li><li><a href="#products">מוצרים</a></li><li><a href="/help/">עזרה</a></li><li><a href="#contact">צור קשר</a></li></ul></nav>
 <a href="#contact" class="btn hcta">לתיאום פגישה</a>
 <button class="burger" aria-label="תפריט" onclick="nv.classList.toggle('open')"><svg viewBox="0 0 24 24" width="28" height="28" stroke="#fff" stroke-width="2" fill="none"><path d="M3 6h18M3 12h18M8 18h13"/></svg></button></div></header>
 <nav class="hud" id="hud"></nav><div class="coord" id="coord">32.776°N 35.371°E · HRAM</div>
@@ -172,6 +196,18 @@ nav{display:none;position:absolute;top:100%;inset-inline:0;background:rgba(11,23
 <div class="pb"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div>
 <video id="pv" controls playsinline preload="none" poster="video/hram_promo_poster.jpg"></video></div></div></div></section>
 
+<section id="products" class="prods" data-cam="pain" data-label="מוצרים"><div class="c" style="width:100%"><div class="panel glass r">
+<div class="tag">מוצרים דיגיטליים</div><h2>כלים שנבנו <em>בשטח</em> – גם עבורכם.</h2>
+<p class="lead">תוספי AutoCAD, תבניות אקסל וקורס – אותם כלים שאנחנו משתמשים בהם בפרויקטים שלנו.</p>
+<div class="pgrid">
+<a class="pcd" href="/products/parking-suite/"><img src="/products/img/parking_cover.webp" alt="Haram Parking Suite 2.0 – תוסף AutoCAD לחניות ונגישות" loading="lazy"><div class="pb2"><h3>Haram Parking Suite 2.0</h3><p>תוסף AutoCAD לתכנון חניות, נגישות, תמרור ורמפות – מעל 30 פקודות.</p><div class="pr">₪828<small>למשתמש לשנה · כולל מע״מ</small></div><span class="more">לפרטים ←</span></div></a>
+<a class="pcd" href="/products/traffic-toolkit/"><img src="/products/img/toolkit_cover.webp" alt="HRAM Traffic Toolkit v1" loading="lazy"><div class="pb2"><h3>HRAM Traffic Toolkit v1</h3><p>7 פקודות LISP, מחשבון חניה באקסל ואומדן כמויות לכבישים.</p><div class="pr">₪299<small>כולל מע״מ</small></div><span class="more">לפרטים ←</span></div></a>
+<a class="pcd" href="/products/temp-traffic-estimate/"><img src="/products/img/temp_traffic_3.webp" alt="תבנית אומדן הסדרי תנועה זמניים" loading="lazy"><div class="pb2"><h3>אומדן הסדרי תנועה זמניים</h3><p>תבנית Excel לאומדן עלויות: תמרורים, קונוסים, מחסומים ופקחים.</p><div class="pr">₪179<small>כולל מע״מ</small></div><span class="more">לפרטים ←</span></div></a>
+<a class="pcd" href="/products/course/"><img src="/products/img/course_cover.webp" alt="קורס תכנון הסדרי תנועה ב-AutoCAD" loading="lazy"><div class="pb2"><h3>קורס הסדרי תנועה ב-AutoCAD</h3><p>8 מודולים – מהרגולציה ועד גיליון מוכן להגשה.</p><div class="pr">בקרוב<small>רשימת המתנה</small></div><span class="more">לפרטים ←</span></div></a>
+</div>
+<div class="pall"><a class="btn" href="/products/">לכל המוצרים <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="/products/pro-bundle/">חבילת Pro</a></div>
+</div></div></section>
+
 <section class="cta" data-cam="cta" data-label="בואו נדבר"><div class="c" style="width:100%"><div class="panel glass r"><div><h2>יש לכם פרויקט?<br>בואו נדבר.</h2><p>שיחה אחת עם מהנדס – ותדעו בדיוק מה הצעד הבא.</p></div>
 <div class="lines"><a href="tel:0543489357"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span><small>טלפון משרד</small>054-348-9357</span></a>
 <a href="mailto:office@hram.co.il"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 5l9 8 9-8"/></svg><span><small>דוא״ל</small>office@hram.co.il</span></a></div></div></div></section>
@@ -191,7 +227,7 @@ nav{display:none;position:absolute;top:100%;inset-inline:0;background:rgba(11,23
 <footer><div class="c"><div class="ft"><div><a class="logo"><span class="m">HR</span><span>הרם הנדסה ותחבורה בע״מ<small>ENGINEERING · TRANSPORTATION</small></span></a><p>תכנון, פיקוח וניהול פרויקטים הנדסיים בסטנדרטים הגבוהים ביותר.</p></div>
 <div><h4>ניווט</h4><ul><li><a href="#services">שירותים</a></li><li><a href="#areas">תחומי פעילות</a></li><li><a href="#why">למה הרם</a></li><li><a href="/products/">מוצרים</a></li><li><a href="/help/">עזרה ותמיכה</a></li><li><a href="#contact">צור קשר</a></li></ul></div>
 <div><h4>פרטי התקשרות</h4><ul><li>אבן סינא 105, טורעאן</li><li><a href="tel:0543489357">054-348-9357</a></li><li><a href="mailto:office@hram.co.il">office@hram.co.il</a></li></ul></div></div>
-<div class="cp"><span>© 2026 הרם הנדסה ותחבורה בע״מ, מוחמד סבאח. כל הזכויות שמורות · ח.פ. 516561032 · אבן סעינה 105, טורעאן</span><span><a href="/help/">עזרה</a> · <a href="/legal/terms/">תקנון</a> · <a href="/legal/refund/">ביטולים והחזרים</a> · <a href="/legal/privacy/">פרטיות</a> · <a href="/legal/accessibility/">נגישות</a></span></div></div></footer>
+<div class="cp"><span>© 2026 הרם הנדסה ותחבורה בע״מ, מוחמד סבאח. כל הזכויות שמורות · ח.פ. 516561032 · אבן סינא 105, טורעאן</span><span><a href="/help/">עזרה</a> · <a href="/legal/terms/">תקנון</a> · <a href="/legal/refund/">ביטולים והחזרים</a> · <a href="/legal/privacy/">פרטיות</a> · <a href="/legal/accessibility/">נגישות</a></span></div></div></footer>
 <a class="fab" href="tel:0543489357"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>התקשרו למשרד</a>
 <script>
 const h=document.getElementById('hd');
@@ -211,4 +247,18 @@ vb.addEventListener('click',playV);vb.addEventListener('keydown',e=>{if(e.key===
 setTimeout(()=>document.documentElement.classList.add('gl-ready'),6000);
 </script>
 <script type="module" src="js/scene.js"></script>
+<!-- HRAM-WA-BUTTON:start (כפתור וואטסאפ צף – הדביקו לפני </body>) -->
+<style>
+.hram-wa{position:fixed;right:18px;bottom:18px;z-index:80;direction:rtl;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;font:700 15px/1 system-ui,-apple-system,"Segoe UI",Heebo,Arial,sans-serif;text-decoration:none;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .2s,box-shadow .2s}
+.hram-wa:hover,.hram-wa:focus-visible{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.45);color:#fff}
+.hram-wa:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hram-wa svg{width:28px;height:28px;flex:none;fill:#fff}
+@media (max-width:600px){.hram-wa{right:14px;bottom:14px;padding:13px}.hram-wa span{display:none}}
+@media print{.hram-wa{display:none}}
+</style>
+<a class="hram-wa" href="https://wa.me/972543489357?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D%20%D7%A9%D7%9C%20%D7%94%D7%A8%D7%9D%20%D7%94%D7%A0%D7%93%D7%A1%D7%94%20%D7%95%D7%AA%D7%97%D7%91%D7%95%D7%A8%D7%94" target="_blank" rel="noopener noreferrer" aria-label="שיחה בוואטסאפ עם הרם הנדסה ותחבורה (נפתח בחלון חדש)">
+<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.55 4.18 1.6 6L4 29l8.17-1.57a12.03 12.03 0 0 0 5.87 1.5h.01C24.68 28.93 30 23.6 30 16.97 30 10.4 24.67 3 16.04 3zm0 22.9h-.01a10 10 0 0 1-5.1-1.4l-.37-.22-4.85.93.98-4.73-.24-.38a9.97 9.97 0 0 1-1.53-5.3C4.92 9.4 9.56 5 16.04 5 22.6 5 27.1 9.6 27.1 16.1c0 5.5-4.54 9.8-11.06 9.8zm5.5-7.46c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.93-2.25-.25-.58-.5-.5-.68-.5h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.1 3.2 5.1 4.5.72.3 1.28.5 1.7.63.72.23 1.37.2 1.88.12.58-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg>
+<span>דברו איתנו בוואטסאפ</span>
+</a>
+<!-- HRAM-WA-BUTTON:end -->
 </body></html>
