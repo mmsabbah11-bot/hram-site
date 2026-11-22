@@ -8,7 +8,6 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"דף הבית","item":"https://hram.co.il/"},{"@type":"ListItem","position":2,"name":"הזמנת הדפסת תוכניות","item":"https://hram.co.il/plan-printing/"}]}</script>
 <style>
 /* עמוד הזמנת הדפסות – סגנונות מקומיים בלבד (לא משנים את products.css המשותף) */
-.draft-banner{position:relative;z-index:60;background:#b3261e;color:#fff;text-align:center;font-weight:700;padding:8px 14px;font-size:14px}
 .po-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:start}
 .po-step{margin-bottom:22px}.po-step h2{font-size:24px;display:flex;gap:12px;align-items:center}.po-step h2 .n{flex:none;width:34px;height:34px;display:grid;place-items:center;background:var(--a);color:var(--n);font-size:17px;font-weight:800}
 .po label.f{display:block;font-size:14px;color:var(--mut);margin:12px 0 5px}
@@ -31,7 +30,6 @@
 .sum{position:sticky;top:100px}.sum .ln{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--gb);font-size:15px}.sum .ln span:last-child{white-space:nowrap}
 .sum .tot{font-size:22px;font-weight:800;color:var(--a);border-bottom:0;padding-top:12px}.sum .sub{color:var(--mut);font-size:13.5px}
 .sum .ctas{display:flex;flex-direction:column;gap:10px;margin-top:16px}.sum .btn{justify-content:center}.btn[aria-disabled=true]{opacity:.5}
-.prop{display:inline-block;font-size:12px;font-weight:700;color:#0b1724;background:#ffd54f;padding:1px 8px;margin-inline-start:6px}
 .msg{font-size:13.5px;margin-top:10px;color:#ff8a80;min-height:1em}.msg.ok{color:#8fd19e}
 .prog{display:none;margin-top:12px}.prog.on{display:block}.prog .bar{height:8px;background:rgba(255,255,255,.1);overflow:hidden}.prog .bar i{display:block;height:100%;width:0;background:var(--a);transition:width .2s}.prog .pt{font-size:13px;color:var(--mut);margin-top:6px}
 .alt{display:none;flex-direction:column;gap:10px;margin-top:10px}.alt.on{display:flex}.alt p{font-size:13.5px;color:var(--mut)}
@@ -40,8 +38,6 @@
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.po-grid>*{min-width:0}
 @media(max-width:680px){.row .fl{grid-template-columns:1fr 1fr}.cgrid{grid-template-columns:1fr}.ptab{font-size:14px}}
 </style></head><body>
-<!-- DRAFT: להסיר את הפס האדום לפני מיזוג, לאחר אישור מוחמד -->
-<div class="draft-banner">טיוטה – לא פעיל. ממתין לאישור מוחמד לפני מיזוג</div>
 <div class="bg"></div>
 <header><div class="c nav"><a href="/" class="logo"><span class="m">HR</span><span>הרם הנדסה ותחבורה<small>ENGINEERING · TRANSPORTATION</small></span></a>
 <nav><ul><li class="x"><a href="/services/">שירותים</a></li><li class="x"><a href="/about/">אודות</a></li><li><a href="/products/">מוצרים</a></li><li class="x"><a href="/plan-printing/" class="on">הדפסות</a></li><li><a href="/help/">עזרה</a></li><li><a href="/#contact">צור קשר</a></li></ul></nav></div></header>
@@ -112,7 +108,7 @@ var CONFIG = {
     {id:"full", name:"צבע מלא",  price:45}
   ],
   SHEETS: {A0:[841,1189], A1:[594,841], A2:[420,594], A3:[297,420]},
-  /* הצעה – לאישור מוחמד. ₪ לפני מע״מ, למשלוח אחד (עד גליל/חבילה אחת) */
+  /* תעריפי משלוח מאושרים 22.11.2026. ₪ לפני מע״מ, למשלוח אחד (עד גליל/חבילה אחת) */
   DELIVERY: [
     {id:"pickup", name:"איסוף עצמי מהמשרד – אבן סינא 105, טורעאן", price:0, desc:"ללא עלות · א׳–ה׳ 09:00–17:00"},
     {id:"d10",  name:"עד 10 ק״מ",   price:40,  desc:"טורעאן, כפר כנא, משהד, עילבון, בועיינה-נוג׳ידאת"},
@@ -122,7 +118,6 @@ var CONFIG = {
     {id:"d150", name:"100–150 ק״מ", price:290, desc:"נתניה, השרון, תל אביב והמרכז"},
     {id:"quote",name:"מעל 150 ק״מ", price:null, desc:"ירושלים, הדרום – בהצעת מחיר"}
   ],
-  DELIVERY_IS_PROPOSAL: false,       /* תעריפים אושרו ע"י מוחמד 22.11.2026 */
   /* כתובת ה-Web App של Google Apps Script (ראו tools/print-orders-apps-script/README.md).
      כל עוד הערך מכיל TBD – ההזמנה נשלחת במייל/וואטסאפ בלבד */
   APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycby0ugHU9GQboxnVk4L6Sr5uocFIiR_8I9UZCcUh84HhMISiPK1A7Lp6ebuwMs6xJLAp/exec",
@@ -145,8 +140,7 @@ $("priceTable").innerHTML=CONFIG.PRINT_TYPES.map(function(t){return "<tr><td>"+t
 /* אפשרויות משלוח */
 $("delivOpts").innerHTML=CONFIG.DELIVERY.map(function(o,i){
   var p=o.price===null?"הצעת מחיר":(o.price===0?"חינם":ils(o.price)+" + מע״מ ("+ils(round2(o.price*(1+CONFIG.VAT)))+" כולל)");
-  var tag=(CONFIG.DELIVERY_IS_PROPOSAL&&o.price)?'<span class="prop">הצעה – לאישור מוחמד</span>':"";
-  return '<label class="opt"><input type="radio" name="deliv" value="'+o.id+'"'+(i===0?" checked":"")+'><span><span class="t">'+o.name+' · '+p+'</span>'+tag+'<span class="s">'+o.desc+'</span></span></label>';
+  return '<label class="opt"><input type="radio" name="deliv" value="'+o.id+'"'+(i===0?" checked":"")+'><span><span class="t">'+o.name+' · '+p+'</span><span class="s">'+o.desc+'</span></span></label>';
 }).join("");
 document.querySelectorAll('input[name=deliv]').forEach(function(r){r.addEventListener("change",calc)});
 function typeOpts(sel){return CONFIG.PRINT_TYPES.map(function(t){return '<option value="'+t.id+'"'+(t.id===sel?" selected":"")+'>'+t.name+' – '+t.price+' ₪/מ׳</option>'}).join("")}
@@ -215,7 +209,7 @@ function calc(){
   $("addrBox").style.display=dv.id==="pickup"?"none":"block";
   net=round2(net+dCost);var vat=round2(net*CONFIG.VAT),gross=round2(net+vat);
   var h=lines.map(function(l){return '<div class="ln"><span>'+esc(l.txt)+'</span><span>'+ils(l.cost)+'</span></div>'}).join("");
-  h+='<div class="ln"><span>'+(dv.id==="pickup"?"איסוף עצמי":"משלוח "+dv.name)+(CONFIG.DELIVERY_IS_PROPOSAL&&dv.price?' <span class="prop">הצעה</span>':"")+'</span><span>'+(dv.price===null?"בהצעת מחיר":ils(dCost))+'</span></div>';
+  h+='<div class="ln"><span>'+(dv.id==="pickup"?"איסוף עצמי":"משלוח "+dv.name)+'</span><span>'+(dv.price===null?"בהצעת מחיר":ils(dCost))+'</span></div>';
   if(!lines.length)h='<p class="sub">עוד לא נוספו קבצים.</p>'+h;
   $("sumLines").innerHTML=h;$("tNet").textContent=ils(net);$("tVat").textContent=ils(vat);$("tGross").textContent=ils(gross);
   state={ok:lines.length>0&&!bad,net:net,vat:vat,gross:gross,lines:lines,dv:dv};
