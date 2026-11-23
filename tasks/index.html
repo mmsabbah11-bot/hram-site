@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1724">
+<meta name="robots" content="noindex,nofollow">
+<title>מנהל המשרד | הרם הנדסה ותחבורה</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--n:#0b1724;--n2:#12233a;--mut:#b4c0cc;--a:#f0a81c}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:Heebo,Arial,sans-serif;background:var(--n);color:#fff;line-height:1.7;-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;padding:32px 20px}
+main{width:100%;max-width:420px;text-align:center}
+.logo{display:inline-flex;align-items:center;gap:12px;color:#fff;text-decoration:none;margin-bottom:36px}
+.logo .m{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--a);color:var(--n);font-weight:800;font-size:16px;letter-spacing:-.5px}
+.logo span:last-child{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;font-weight:700;font-size:16px}
+.logo small{font-weight:500;font-size:10px;letter-spacing:.08em;color:var(--mut);margin-top:3px}
+#status{color:var(--a);font-weight:600;font-size:18px}
+#err{color:#fff;margin-top:8px}
+#fallback{margin-top:24px}
+#fallback a{display:inline-block;padding:14px 28px;background:var(--a);color:var(--n);font-weight:700;text-decoration:none}
+#fallback a:hover{background:#ffbf3f}
+noscript{display:block;color:#fff;margin-top:16px}
+</style>
+</head>
+<body>
+<main>
+  <a class="logo" href="https://hram.co.il/"><span class="m">HR</span><span>הרם הנדסה ותחבורה<small>ENGINEERING · TRANSPORTATION</small></span></a>
+  <p id="status">מתחבר למנהל המשרד…</p>
+  <p id="err" hidden></p>
+  <p id="fallback" hidden><a id="link" href="#">פתח את מנהל המשרד</a></p>
+  <noscript>יש להפעיל JavaScript כדי להיכנס למנהל המשרד.</noscript>
+</main>
+<script>
+(function () {
+  var statusEl = document.getElementById("status");
+  var errEl = document.getElementById("err");
+  var fallbackEl = document.getElementById("fallback");
+  var linkEl = document.getElementById("link");
+  var allowed = /^https:\/\/[a-z0-9-]+\.trycloudflare\.com\/?$/i;
+
+  function fail(msg, url) {
+    statusEl.hidden = true;
+    errEl.hidden = false;
+    errEl.textContent = msg;
+    if (url) {
+      fallbackEl.hidden = false;
+      linkEl.href = url;
+    }
+  }
+
+  fetch("/app/server.json?t=" + Date.now(), { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("http");
+      return r.json();
+    })
+    .then(function (data) {
+      var url = data && data.url ? String(data.url).trim() : "";
+      if (!allowed.test(url)) throw new Error("bad-url");
+      url = url.replace(/\/$/, "");
+      linkEl.href = url;
+      location.replace(url);
+    })
+    .catch(function () {
+      fail("לא ניתן להתחבר למנהל המשרד כרגע. רענן את הדף או נסה שוב בעוד כמה דקות.");
+    });
+})();
+</script>
+</body>
+</html>
